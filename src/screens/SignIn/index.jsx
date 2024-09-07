@@ -1,43 +1,98 @@
-import React from "react";
-import './SignIn.css'
+import React, { useState } from "react";
+import './SignIn.css';
+import NavBar from "../../components/NavBar";
+import bannerImg from "../../assets/SignInImg.svg";
 
 const SignIn = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errors, setErrors] = useState({
+        email: '',
+        password: ''
+    });
+
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            [name]: value ? '' : `${name} is required`
+        }));
+
+        if (name === 'email') setEmail(value);
+        if (name === 'password') setPassword(value);
+    };
+
+    const submitForm = (e) => {
+        e.preventDefault();
+
+        let valid = true;
+        let newErrors = { email: '', password: '' };
+
+        if (!email || !validateEmail(email)) {
+            newErrors.email = 'Please enter a valid email address';
+            valid = false;
+        }
+
+        if (!password) {
+            newErrors.password = 'Password is required';
+            valid = false;
+        }
+
+        if (!valid) {
+            setErrors(newErrors);
+        } else {
+            alert(`Email: ${email}\nPassword: ${password}`);
+        }
+    };
+
     return (
         <>
-            <div>
-                <header>
-                    <div className="header">
-                        <h2>Faison Wear</h2>
-                        <input type="text" placeholder="Search here" />
-                        <div className="rightHeader">
-                            <h6>Store</h6>
-                            <h6>Wish List</h6>
-                            <button className="login">Login</button>
+            <NavBar />
+            <div className="signIn">
+                <div className="image-section">
+                    <img src={bannerImg} alt="banner" />
+                </div>
+                <div className="form">
+                    <h2>Sign In</h2>
+                    <p>Please Enter Details for login</p>
+                    <form onSubmit={submitForm}>
+                        <div className="input">
+                            <p>User name or email address</p>
+                            <input
+                                type="text"
+                                id="email-input"
+                                name="email"
+                                placeholder="Enter your User name or email"
+                                value={email}
+                                onChange={handleInputChange}
+                            />
+                            {errors.email && <span className="error">{errors.email}</span>}
+                            <p>Password</p>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                value={password}
+                                onChange={handleInputChange}
+                            />
+                            {errors.password && <span className="error">{errors.password}</span>}
                         </div>
-                    </div>
-                </header>
-                <nav className="nav-bar">
-                    <a href="#new-arrivals">New Arrivals</a>
-                    <a href="#fresh" className="highlight">#Fresh</a>
-                    <a href="#dresses">Dresses</a>
-                    <a href="#tops">Tops</a>
-                    <a href="#jackets">Jackets</a>
-                    <a href="#lingerie">Lingerie & Lounge Wear</a>
-                    <a href="#beach-wear">Beach Wear</a>
-                    <a href="#blouse">Blouse</a>
-                    <a href="#denim">Denim</a>
-                    <a href="#vintage">Vintage</a>
-                    <a href="#shoes">Shoes</a>
-                    <a href="#sandals">Sandals</a>
-                    <a href="#bags">Bags</a>
-                    <a href="#jewelries">Jewelries</a>
-                </nav>
-                <div className="login-section">
-
+                        <a href="#">Forgot your password?</a>
+                        <br />
+                        <button className="signIn-button" type="submit">Sign In</button>
+                        <p>Don't have an account? <a href="#">Sign Up</a></p>
+                    </form>
                 </div>
             </div>
         </>
     );
 };
 
-export default SignIn; 
+export default SignIn;

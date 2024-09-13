@@ -27,7 +27,7 @@
   }
   
   
-  input[type="text"] {
+  .search {
     width: 250px; 
     padding: 10px 20px; 
     border: 1px solid #E2E8F0; 

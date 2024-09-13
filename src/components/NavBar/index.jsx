@@ -5,7 +5,7 @@ const NavBar = () => {
             <header>
                 <div className="header">
                     <h2>Faison Wear</h2>
-                    <input type="text" placeholder="Search here" />
+                    <input type="text" className="search" placeholder="Search here" />
                     <div className="rightHeader">
                         <h6>Store</h6>
                         <h6>Wish List</h6>

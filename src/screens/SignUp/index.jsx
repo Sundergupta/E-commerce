@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavBar from "../../components/NavBar";
 // import Footer from "../../components/footer";
 import bannerImg from "../../assets/SignUpImg.svg";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
     const [email, setEmail] = useState('');
@@ -53,17 +54,16 @@ const SignUp = () => {
 
     return (
         <div className="flex flex-col h-screen overflow-hidden">
-            <NavBar />
+
             <div className="flex flex-1 gap-4 h-full">
                 <div className="w-1/2 ">
-                    <img src={bannerImg} alt="banner" className="  w-full  object-contain" />
-
+                    <img src={bannerImg} alt="banner" className="w-full object-contain" />
                 </div>
                 <div className="w-1/3 p-8 bg-white min-h-[60vh]">
                     <h2 className="text-2xl font-bold mb-4 text-left">Sign Up</h2>
                     <p className="text-left text-lg mb-4">Please enter details for login</p>
 
-                    <form onSubmit={submitForm}>
+                    <form onSubmit={submitForm} >
                         <div className="flex flex-col items-start">
                             <p className="mb-2 font-medium text-left">User name or email address</p>
                             <input
@@ -94,16 +94,20 @@ const SignUp = () => {
                             <a href="#" className="text-blue-500 text-sm hover:underline">Forgot your password?</a>
                         </div>
 
-                        <button
-                            className="bg-gray-900 text-white font-bold py-3 px-6 rounded-md text-sm mt-5 w-1/4  hover:bg-gray-800 text-center"
-                            type="submit"
-                        >
-                            Sign Up
-                        </button>
 
-                        <p className="mt-4">
-                            Don't have an account? <a href="#" className="text-blue-500">Sign Up</a>
-                        </p>
+                        <div className="flex flex-col items-start" >
+                            <button
+                                className="bg-gray-900 text-white font-bold py-3  rounded-md text-sm mt-5 w-1/4 hover:bg-gray-800 text-center"
+                                type="submit"
+                            >
+                                Sign Up
+                            </button>
+                            <p className="mt-4">
+                                Already have an account? <Link to="/sign-in" className="text-blue-500">Sign In</Link>
+                            </p>
+                        </div>
+
+
                     </form>
                 </div>
             </div>

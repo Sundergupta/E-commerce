@@ -1,18 +1,37 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
-import SignIn from './screens/SignIn';
 import SignUp from './screens/SignUp';
+import SignIn from './screens/SignIn';
+import RootLayout from './components/RootLayout';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      {
+        path: "sign-in",
+        element: <SignIn />,
+
+
+      },
+      {
+        path: "sign-up",
+        element: <SignUp />,
+      },
+    ]
+  }
+
+]);
+
+
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
 
-      <SignIn />
-      {/* <SignUp /> */}
+      <RouterProvider router={router} />
     </>
   );
 }

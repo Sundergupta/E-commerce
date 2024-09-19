@@ -3,6 +3,7 @@ import NavBar from "../../components/NavBar";
 // import Footer from "../../components/footer";
 import bannerImg from "../../assets/SignInImg.svg";
 import { Formik } from "formik";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -58,7 +59,7 @@ const SignIn = () => {
 
     return (
         <div className="flex flex-col h-screen overflow-hidden">
-            <NavBar />
+
             <div className="flex flex-1 gap-4 h-full ">
                 <div className="w-1/2 ">
                     <img src={bannerImg} alt="banner" className="w-full object-contain" />
@@ -128,19 +129,17 @@ const SignIn = () => {
                                     <a href="#" className="text-blue-500 text-sm hover:underline">Forgot your password?</a>
                                 </div>
 
-                                {/* Align Sign In Button to the left */}
-                                <div className="w-full mt-5">
+                                <div className="flex flex-col items-start" >
                                     <button
-                                        className="bg-gray-900 text-white font-bold py-3 px-6 rounded-md text-sm hover:bg-gray-800"
+                                        className="bg-gray-900 text-white font-bold py-3  rounded-md text-sm mt-5 w-1/4 hover:bg-gray-800 text-center"
                                         type="submit"
                                     >
                                         Sign In
                                     </button>
+                                    <p className="mt-4">
+                                        Don't have an account? <Link to="/sign-up" className="text-blue-500">Sign Up</Link>
+                                    </p>
                                 </div>
-
-                                <p className="mt-4">
-                                    Don't have an account? <a href="#" className="text-blue-500">Sign Up</a>
-                                </p>
                             </form>
                         )}
                     </Formik>

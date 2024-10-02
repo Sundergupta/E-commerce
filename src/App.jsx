@@ -5,6 +5,7 @@ import SignIn from './screens/SignIn';
 import RootLayout from './components/RootLayout';
 import UrlUser from './components/UrlUser';
 import Home from './screens/Home';
+import Footer from './components/footer/footer.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,14 +22,17 @@ const router = createBrowserRouter([
       },
       {
         path: "home",
-        element: <Home />
+        element: <Home />,
+        // element: <Footer />
       }
+
     ]
   },
   {
     path: "*",
     element: <Navigate to={"/sign-in"} replace />
   }
+
 ]);
 
 function App() {

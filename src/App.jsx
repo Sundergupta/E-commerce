@@ -5,7 +5,7 @@ import SignIn from './screens/SignIn';
 import RootLayout from './components/RootLayout';
 import UrlUser from './components/UrlUser';
 import Home from './screens/Home';
-import Footer from './components/Footer/footer.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        // element: <Footer />
+
       }
 
     ]

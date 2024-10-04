@@ -5,7 +5,7 @@ import SignIn from './screens/SignIn';
 import RootLayout from './components/RootLayout';
 import UrlUser from './components/UrlUser';
 import Home from './screens/Home';
-import Footer from './components/footer/footer.jsx';
+import Footer from './components/Footer/footer.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
         element: <SignUp />,
       },
       {
-        path: "home",
+        path: "/",
         element: <Home />,
         // element: <Footer />
       }

@@ -5,7 +5,7 @@ import Title from '../../components/title.jsx'
 
 import SummerImage from '../../assets/Home/Image1.svg';
 import HighCozinessImage from '../../assets/Home/Image2.svg';
-import BreezySummerImage from '../../assets/Home/Image3.svg';
+import BreezySummerImage from '../../assets/Home/image3.svg';
 import NewArrivalImage1 from '../../assets/Home/New Arrivel/Image4.svg';
 import NewArrivalImage2 from '../../assets/Home/New Arrivel/Image5.svg';
 import NewArrivalImage3 from '../../assets/Home/New Arrivel/Image6.svg';

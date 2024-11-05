@@ -6,10 +6,10 @@ import Title from '../../components/title.jsx'
 import SummerImage from '../../assets/Home/Image1.svg';
 import HighCozinessImage from '../../assets/Home/Image2.svg';
 import BreezySummerImage from '../../assets/Home/image3.svg';
-import NewArrivalImage1 from '../../assets/Home/New Arrivel/Image4.svg';
-import NewArrivalImage2 from '../../assets/Home/New Arrivel/Image5.svg';
-import NewArrivalImage3 from '../../assets/Home/New Arrivel/Image6.svg';
-import NewArrivalImage4 from '../../assets/Home/New Arrivel/Image7.svg';
+import NewArrivalImage1 from '../../assets/Home/New Arrivel/image4.svg';
+import NewArrivalImage2 from '../../assets/Home/New Arrivel/image5.svg';
+import NewArrivalImage3 from '../../assets/Home/New Arrivel/image6.svg';
+import NewArrivalImage4 from '../../assets/Home/New Arrivel/image7.svg';
 
 import BigSavingImage1 from '../../assets/Home/Big Saving Zone/Image1.svg';
 import BigSavingImage2 from '../../assets/Home/Big Saving Zone/Image2.svg';

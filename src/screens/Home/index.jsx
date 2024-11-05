@@ -53,8 +53,22 @@ import FeedImage2 from '../../assets/Home/FeedBack/FeedBackImage2.svg'
 import FeedImage3 from '../../assets/Home/FeedBack/FeedBackImage3.svg'
 import Card from '../../components/Card.jsx';
 import Feedback from '../../components/Feedback.jsx'
+// import List from '../../components/List.jsx'
 
 const App = () => {
+    // /////////////////////////////////////////////////////
+    // LimelightImage
+    const LimelightImage = [
+        { src: LimelightImage1, description: true, price: true, heart: true },
+        { src: LimelightImage2, description: true, price: true, heart: true },
+        { src: LimelightImage3, description: true, price: true, heart: true }
+    ];
+    // Arrival Section
+
+
+    // /////////////////////////////////////////////////////
+
+
     const slides = [
         {
             image: SummerImage,
@@ -120,9 +134,133 @@ const App = () => {
         { image: LimelightImage1, alt: "Bozers", title: "Bozers" },
         { image: LimelightImage2, alt: "Bozers", title: "Bozers" },
         { image: LimelightImage3, alt: "Bozers", title: "Bozers" },
-        { image: LimelightImage4, alt: "Bozers", title: "Bozers" }
+        { image: LimelightImage4, alt: "Bozers", title: "Bozers" },
 
+
+
+
+
+
+
+        // {
+        //     id: 1,
+        //     title: 'Black Sweatshirt',
+        //     description: 'Comfortable and stylish sweatshirt',
+        //     brand: "Jhanvi's Brand",
+        //     price: 123.00,
+        //     isFavorite: false,
+        //     image: LimelightImage1,  // Assign the image here
+        // },
+        // {
+        //     id: 2,
+        //     title: 'Red Hoodie',
+        //     description: 'Warm and cozy hoodie',
+        //     brand: "Jhanvi's Brand",
+        //     price: 150.00,
+        //     isFavorite: false,
+        //     image: LimelightImage2,  // You can use different images here
+        // },
+        // {
+        //     id: 3,
+        //     title: 'Red Hoodie',
+        //     description: 'Warm and cozy hoodie',
+        //     brand: "Jhanvi's Brand",
+        //     price: 150.00,
+        //     isFavorite: false,
+        //     image: LimelightImage3,  // You can use different images here
+        // },
+        // {
+        //     id: 4,
+        //     title: 'Red Hoodie',
+        //     description: 'Warm and cozy hoodie',
+        //     brand: "Jhanvi's Brand",
+        //     price: 150.00,
+        //     isFavorite: false,
+        //     image: LimelightImage4,  // You can use different images here
+        // },
+
+
+
+        // {
+        //     id: 1,
+        //     title: 'Summer Collection',
+        //     image: LimelightImage1,
+        //     details: 'Enjoy the summer with this amazing collection!',
+        //     price: '$49.99',
+        // },
+        // {
+        //     id: 2,
+        //     title: 'High Coziness',
+        //     image: LimelightImage2,
+        //     details: 'Stay cozy with our best collection!',
+        //     price: '$79.99',
+        // },
+        // {
+        //     id: 3,
+        //     title: 'Breezy Summer',
+        //     image: LimelightImage3,
+        //     details: 'Feel the breeze with this awesome summer wear!',
+        //     price: '$99.99',
+        // },
+        // {
+        //     id: 4,
+        //     title: 'Breezy Summer',
+        //     image: LimelightImage4,
+        //     details: 'Feel the breeze with this awesome summer wear!',
+        //     price: '$99.99',
+        // },
     ]
+
+    const [products, setProducts] = useState([
+
+        {
+            id: 1,
+            title: 'Black Sweatshirt',
+            description: 'Comfortable and stylish sweatshirt',
+            brand: "Jhanvi's Brand",
+            price: 123.00,
+            isFavorite: false,
+            image: LimelightImage1,  // Assign the image here
+        },
+        {
+            id: 2,
+            title: 'Red Hoodie',
+            description: 'Warm and cozy hoodie',
+            brand: "Jhanvi's Brand",
+            price: 150.00,
+            isFavorite: false,
+            image: LimelightImage2,  // You can use different images here
+        },
+        {
+            id: 3,
+            title: 'Red Hoodie',
+            description: 'Warm and cozy hoodie',
+            brand: "Jhanvi's Brand",
+            price: 150.00,
+            isFavorite: false,
+            image: LimelightImage3,  // You can use different images here
+        },
+        {
+            id: 4,
+            title: 'Red Hoodie',
+            description: 'Warm and cozy hoodie',
+            brand: "Jhanvi's Brand",
+            price: 150.00,
+            isFavorite: false,
+            image: LimelightImage4,  // You can use different images here
+        },
+    ]);
+    // Toggle 
+    const toggleFavorite = (id) => {
+        setProducts((prevProducts) =>
+            prevProducts.map((product) =>
+                product.id === id ? { ...product, isFavorite: !product.isFavorite } : product
+            )
+        );
+    };
+
+
+
     return (
         <div className="w-full min-h-screen bg-gray-100">
             {/* Slider Section */}
@@ -187,9 +325,25 @@ const App = () => {
                     <div className="flex items-center mb-4">
                         <Title title="New Arrival" />
                     </div>
-
-                    <Card items={newArrivals} />
-
+                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6'>
+                        <Card
+                            imageSrc={NewArrivalImage1}
+                            title="Knitted Joggers"
+                            showTitle={true}
+                        /><Card
+                            imageSrc={NewArrivalImage2}
+                            title="Full Sleeve"
+                            showTitle={true}
+                        /><Card
+                            imageSrc={NewArrivalImage3}
+                            title="Active T-Shirts"
+                            showTitle={true}
+                        /><Card
+                            imageSrc={NewArrivalImage4}
+                            title="Urban Shirts"
+                            showTitle={true}
+                        />
+                    </div>
                 </div>
 
                 {/*  Big saving zone */}
@@ -333,9 +487,73 @@ const App = () => {
                     <div className="flex items-center mb-4">
                         <Title title="Categories For Men" />
                     </div>
-                    <Card items={CategoriesImage} />
-                    <Card items={CategoriesImages2} />
+                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6'>
 
+                        <Card
+                            imageSrc={CategoriesImage1}
+                            title="Black Sweatshirt ..."
+                            brand="Jhanvi's Brand"
+                            showTitle={true}
+                            showBrand={true}
+                            showArrow={true}
+                        />
+                        <Card
+                            imageSrc={CategoriesImage2}
+                            title="Black Sweatshirt ..."
+                            brand="Jhanvi's Brand"
+                            showTitle={true}
+                            showBrand={true}
+                            showArrow={true}
+                        />
+                        <Card
+                            imageSrc={CategoriesImage3}
+                            title="Black Sweatshirt ..."
+                            brand="Jhanvi's Brand"
+                            showTitle={true}
+                            showBrand={true}
+                            showArrow={true}
+                        />
+                        <Card
+                            imageSrc={CategoriesImage4}
+                            title="Black Sweatshirt ..."
+                            brand="Jhanvi's Brand"
+                            showTitle={true}
+                            showBrand={true}
+                            showArrow={true}
+                        />
+                        <Card
+                            imageSrc={CategoriesImage5}
+                            title="Black Sweatshirt ..."
+                            brand="Jhanvi's Brand"
+                            showTitle={true}
+                            showBrand={true}
+                            showArrow={true}
+                        />
+                        <Card
+                            imageSrc={CategoriesImage6}
+                            title="Black Sweatshirt ..."
+                            brand="Jhanvi's Brand"
+                            showTitle={true}
+                            showBrand={true}
+                            showArrow={true}
+                        />
+                        <Card
+                            imageSrc={CategoriesImage7}
+                            title="Black Sweatshirt ..."
+                            brand="Jhanvi's Brand"
+                            showTitle={true}
+                            showBrand={true}
+                            showArrow={true}
+                        />
+                        <Card
+                            imageSrc={CategoriesImage8}
+                            title="Black Sweatshirt ..."
+                            brand="Jhanvi's Brand"
+                            showTitle={true}
+                            showBrand={true}
+                            showArrow={true}
+                        />
+                    </div>
 
 
                     {/* Categories For women section */}
@@ -344,7 +562,38 @@ const App = () => {
                             <div className="w-1 h-6 bg-black mr-2"></div>
                             <h2 className="text-2xl font-semibold italic text-gray-800">Categories For Women</h2>
                         </div>
-                        <Card items={CategoriesWomenImage} />
+                        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6'>
+
+                            <Card
+                                imageSrc={CategoriesWomenImage1}
+                                title="Black Sweatshirt ..."
+                                brand="Jhanvi's Brand"
+                                showTitle={true}
+                                showBrand={true}
+                                showArrow={true}
+                            /><Card
+                                imageSrc={CategoriesWomenImage2}
+                                title="Black Sweatshirt ..."
+                                brand="Jhanvi's Brand"
+                                showTitle={true}
+                                showBrand={true}
+                                showArrow={true}
+                            /><Card
+                                imageSrc={CategoriesWomenImage3}
+                                title="Black Sweatshirt ..."
+                                brand="Jhanvi's Brand"
+                                showTitle={true}
+                                showBrand={true}
+                                showArrow={true}
+                            /><Card
+                                imageSrc={CategoriesWomenImage4}
+                                title="Black Sweatshirt ..."
+                                brand="Jhanvi's Brand"
+                                showTitle={true}
+                                showBrand={true}
+                                showArrow={true}
+                            />
+                        </div>
 
                     </div>
 
@@ -368,12 +617,57 @@ const App = () => {
                 </div>
 
                 {/* Limelights section */}
-                <div className="mt-8 mb-4 ">
-                    <div className="flex items-center mb-4">
-                        <Title title="Categories For Women" />
-                    </div>
-                    <Card items={Limelights} />
+                <Title title="Limelights" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    {/* First Card */}
 
+                    <Card
+                        imageSrc={LimelightImage1}
+                        title="Black Sweatshirt ..."
+                        brand="Jhanvi's Brand"
+                        price="$123.00"
+                        showHeart={true}
+                        showTitle={true}
+                        showBrand={true}
+                        showPrice={true}
+                    />
+
+                    {/* Second Card */}
+                    <Card
+                        imageSrc={LimelightImage2}
+                        title="Line Pattern Black ..."
+                        brand="AS's Brand"
+                        price="$37.00"
+                        showHeart={true}
+                        showTitle={true}
+                        showBrand={true}
+                        showPrice={true}
+                    />
+
+                    {/* Third Card */}
+                    <Card
+                        imageSrc={LimelightImage3}
+                        title="Black Shorts"
+                        brand="MM's Brand"
+                        price="$37.00"
+                        showHeart={true}
+                        showTitle={true}
+                        showBrand={true}
+                        showPrice={true}
+
+                    />
+
+                    {/* Fourth Card */}
+                    <Card
+                        imageSrc={LimelightImage4}
+                        title="Lavender Hoodie ..."
+                        brand="Nike's Brand"
+                        price="$119.00"
+                        showHeart={true}
+                        showTitle={true}
+                        showBrand={true}
+                        showPrice={true}
+                    />
                 </div>
 
             </div>

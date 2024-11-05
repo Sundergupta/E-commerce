@@ -11,11 +11,11 @@ import NewArrivalImage2 from '../../assets/Home/New Arrivel/image5.svg';
 import NewArrivalImage3 from '../../assets/Home/New Arrivel/image6.svg';
 import NewArrivalImage4 from '../../assets/Home/New Arrivel/image7.svg';
 
-import BigSavingImage1 from '../../assets/Home/Big Saving Zone/Image1.svg';
-import BigSavingImage2 from '../../assets/Home/Big Saving Zone/Image2.svg';
-import BigSavingImage3 from '../../assets/Home/Big Saving Zone/Image3.svg';
-import BigSavingImage4 from '../../assets/Home/Big Saving Zone/Image4.svg';
-import BigSavingImage5 from '../../assets/Home/Big Saving Zone/Image5.svg';
+import BigSavingImage1 from '../../assets/Home/Big Saving Zone/image1.svg';
+import BigSavingImage2 from '../../assets/Home/Big Saving Zone/image2.svg';
+import BigSavingImage3 from '../../assets/Home/Big Saving Zone/image3.svg';
+import BigSavingImage4 from '../../assets/Home/Big Saving Zone/image4.svg';
+import BigSavingImage5 from '../../assets/Home/Big Saving Zone/image5.svg';
 
 import arrow from '../../assets/Home/arrow.svg';
 

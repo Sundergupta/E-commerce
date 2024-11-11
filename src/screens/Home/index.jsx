@@ -19,8 +19,8 @@ import BigSavingImage5 from '../../assets/Home/Big Saving Zone/image5.svg';
 
 import arrow from '../../assets/Home/arrow.svg';
 
-import image4 from '../../assets/Home/image4.svg'
-import image5 from '../../assets/Home/image5.svg'
+import image4 from '../../assets/Home/image4.svg';
+import image5 from '../../assets/Home/image5.svg';
 
 import CategoriesImage1 from '../../assets/Home/Categories For Men/CategoriesImage1.svg'
 import CategoriesImage2 from '../../assets/Home/Categories For Men/CategoriesImage2.svg'

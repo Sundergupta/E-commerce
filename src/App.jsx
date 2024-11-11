@@ -5,7 +5,7 @@ import SignIn from './screens/SignIn';
 import RootLayout from './components/RootLayout';
 import UrlUser from './components/UrlUser';
 import Home from './screens/Home';
-
+import List from './screens/ListPage';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +23,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+
+      },
+      {
+        path: "List",
+        element: <List />,
 
       }
 

@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
-import CategoriesWomenImage1 from '../../assets/Home/Categories For Women/CategoriesWomenImage1.svg'
-import CategoriesWomenImage2 from '../../assets/Home/Categories For Women/CategoriesWomenImage2.svg'
-import CategoriesWomenImage3 from '../../assets/Home/Categories For Women/CategoriesWomenImage3.svg'
-import CategoriesWomenImage4 from '../../assets/Home/Categories For Women/CategoriesWomenImage4.svg'
-import CategoriesWomenImage5 from '../../assets/Home/Categories For Women/CategoriesWomenImage5.svg'
-import CategoriesWomenImage6 from '../../assets/Home/Categories For Women/CategoriesWomenImage6.svg'
-import CategoriesWomenImage7 from '../../assets/Home/Categories For Women/CategoriesWomenImage7.svg'
-import CategoriesWomenImage8 from '../../assets/Home/Categories For Women/CategoriesWomenImage8.svg'
-import CategoriesWomenImage9 from '../../assets/Home/Categories For Women/CategoriesWomenImage9.svg'
-import CategoriesWomenImage10 from '../../assets/Home/Categories For Women/CategoriesWomenImage10.svg'
-import CategoriesWomenImage11 from '../../assets/Home/Categories For Women/CategoriesWomenImage11.svg'
-import CategoriesWomenImage12 from '../../assets/Home/Categories For Women/CategoriesWomenImage12.svg'
-import CategoriesWomenImage13 from '../../assets/Home/Categories For Women/CategoriesWomenImage13.svg'
-import CategoriesWomenImage14 from '../../assets/Home/Categories For Women/CategoriesWomenImage14.svg'
+import CategoriesImage1 from '../../assets/Home/Categories For Men/CategoriesImage1.svg'
+import CategoriesImage2 from '../../assets/Home/Categories For Men/CategoriesImage2.svg'
+import CategoriesImage3 from '../../assets/Home/Categories For Men/CategoriesImage3.svg'
+import CategoriesImage4 from '../../assets/Home/Categories For Men/CategoriesImage4.svg'
+import CategoriesImage5 from '../../assets/Home/Categories For Men/CategoriesImage5.svg'
+import CategoriesImage6 from '../../assets/Home/Categories For Men/CategoriesImage6.svg'
+import CategoriesImage7 from '../../assets/Home/Categories For Men/CategoriesImage7.svg'
+import CategoriesImage8 from '../../assets/Home/Categories For Men/CategoriesImage8.svg'
+// import CategoriesImage9 from '../../assets/Home/Categories For Women/CategoriesImage9.svg'
+// import CategoriesImage10 from '../../assets/Home/Categories For Women/ CategoriesImage10.svg'
+// import CategoriesImage11 from '../../assets/Home/Categories For Women/ CategoriesImage11.svg'
+// import CategoriesImage12 from '../../assets/Home/Categories For Women/ CategoriesImage12.svg'
+// import CategoriesImage13 from '../../assets/Home/Categories For Women/ CategoriesImage13.svg'
+// import CategoriesImage14 from '../../assets/Home/Categories For Women/ CategoriesImage14.svg'
 
 import Card from '../../components/Card';
 
 
-const List = () => {
+const MenListPage = () => {
 
 
 
@@ -209,12 +209,12 @@ const List = () => {
             <div className="w-4/5 bg-white rounded-lg shadow-lg p-6">
                 <div className="flex items-center mb-4">
                     <div className="w-1 h-6 bg-black mr-2"></div>
-                    <h2 className="text-2xl font-semibold italic text-gray-800">Categories For Women</h2>
+                    <h2 className="text-2xl font-semibold italic text-gray-800">Categories For Men</h2>
                 </div>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
 
                     <Card
-                        imageSrc={CategoriesWomenImage1}
+                        imageSrc={CategoriesImage1}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -222,7 +222,7 @@ const List = () => {
                         showPrice={true}
                         showHeart={true}
                     /><Card
-                        imageSrc={CategoriesWomenImage2}
+                        imageSrc={CategoriesImage2}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -230,7 +230,7 @@ const List = () => {
                         showPrice={true}
                         showHeart={true}
                     /><Card
-                        imageSrc={CategoriesWomenImage3}
+                        imageSrc={CategoriesImage3}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -238,7 +238,7 @@ const List = () => {
                         showHeart={true}
                         showPrice={true}
                     /><Card
-                        imageSrc={CategoriesWomenImage4}
+                        imageSrc={CategoriesImage4}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -247,7 +247,7 @@ const List = () => {
                         showHeart={true}
                     />
                     <Card
-                        imageSrc={CategoriesWomenImage5}
+                        imageSrc={CategoriesImage5}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -256,7 +256,7 @@ const List = () => {
                         showHeart={true}
 
                     /><Card
-                        imageSrc={CategoriesWomenImage6}
+                        imageSrc={CategoriesImage6}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -264,7 +264,7 @@ const List = () => {
                         showPrice={true}
                         showHeart={true}
                     /><Card
-                        imageSrc={CategoriesWomenImage7}
+                        imageSrc={CategoriesImage7}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -272,7 +272,7 @@ const List = () => {
                         showPrice={true}
                         showHeart={true}
                     /><Card
-                        imageSrc={CategoriesWomenImage8}
+                        imageSrc={CategoriesImage8}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -280,7 +280,7 @@ const List = () => {
                         showPrice={true}
                         showHeart={true}
                     /><Card
-                        imageSrc={CategoriesWomenImage9}
+                        imageSrc={CategoriesImage1}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -288,7 +288,7 @@ const List = () => {
                         showPrice={true}
                         showHeart={true}
                     /><Card
-                        imageSrc={CategoriesWomenImage10}
+                        imageSrc={CategoriesImage2}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -296,7 +296,7 @@ const List = () => {
                         showPrice={true}
                         showHeart={true}
                     /><Card
-                        imageSrc={CategoriesWomenImage11}
+                        imageSrc={CategoriesImage3}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -304,7 +304,7 @@ const List = () => {
                         showPrice={true}
                         showHeart={true}
                     /><Card
-                        imageSrc={CategoriesWomenImage12}
+                        imageSrc={CategoriesImage4}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -312,7 +312,7 @@ const List = () => {
                         showPrice={true}
                         showHeart={true}
                     /><Card
-                        imageSrc={CategoriesWomenImage13}
+                        imageSrc={CategoriesImage5}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -320,7 +320,7 @@ const List = () => {
                         showPrice={true}
                         showHeart={true}
                     /><Card
-                        imageSrc={CategoriesWomenImage14}
+                        imageSrc={CategoriesImage6}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -328,7 +328,7 @@ const List = () => {
                         showPrice={true}
                         showHeart={true}
                     /><Card
-                        imageSrc={CategoriesWomenImage4}
+                        imageSrc={CategoriesImage7}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -336,7 +336,7 @@ const List = () => {
                         showPrice={true}
                         showHeart={true}
                     /><Card
-                        imageSrc={CategoriesWomenImage4}
+                        imageSrc={CategoriesImage8}
                         title="Black Sweatshirt ..."
                         brand="Jhanvi's Brand"
                         showTitle={true}
@@ -351,4 +351,4 @@ const List = () => {
     );
 };
 
-export default List;
+export default MenListPage;

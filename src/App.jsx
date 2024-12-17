@@ -5,7 +5,8 @@ import SignIn from './screens/SignIn';
 import RootLayout from './components/RootLayout';
 import UrlUser from './components/UrlUser';
 import Home from './screens/Home';
-import List from './screens/ListPage';
+import MenListPage from './screens/MenListPage';
+import WomenListPage from './screens/WomeListpage';
 
 const router = createBrowserRouter([
   {
@@ -13,11 +14,11 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        path: "sign-in",
+        path: "SignIn",
         element: <SignIn />,
       },
       {
-        path: "sign-up",
+        path: "SignUp",
         element: <SignUp />,
       },
       {
@@ -27,9 +28,20 @@ const router = createBrowserRouter([
       },
       {
         path: "List",
-        element: <List />,
+        element: <WomenListPage />,
 
-      }
+      },
+      {
+        path: "MenListPage",
+        element: <MenListPage />,
+
+      },
+      {
+        path: "WomeListPage",
+        element: <WomenListPage />,
+
+      },
+
 
     ]
   },

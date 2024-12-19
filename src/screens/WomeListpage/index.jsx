@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import CategoriesWomenImage1 from '../../assets/Home/Categories For Women/CategoriesWomenImage1.svg'
-import CategoriesWomenImage2 from '../../assets/Home/Categories For Women/CategoriesWomenImage2.svg'
-import CategoriesWomenImage3 from '../../assets/Home/Categories For Women/CategoriesWomenImage3.svg'
-import CategoriesWomenImage4 from '../../assets/Home/Categories For Women/CategoriesWomenImage4.svg'
-import CategoriesWomenImage5 from '../../assets/Home/Categories For Women/CategoriesWomenImage5.svg'
-import CategoriesWomenImage6 from '../../assets/Home/Categories For Women/CategoriesWomenImage6.svg'
-import CategoriesWomenImage7 from '../../assets/Home/Categories For Women/CategoriesWomenImage7.svg'
-import CategoriesWomenImage8 from '../../assets/Home/Categories For Women/CategoriesWomenImage8.svg'
-import CategoriesWomenImage9 from '../../assets/Home/Categories For Women/CategoriesWomenImage9.svg'
-import CategoriesWomenImage10 from '../../assets/Home/Categories For Women/CategoriesWomenImage10.svg'
-import CategoriesWomenImage11 from '../../assets/Home/Categories For Women/CategoriesWomenImage11.svg'
-import CategoriesWomenImage12 from '../../assets/Home/Categories For Women/CategoriesWomenImage12.svg'
-import CategoriesWomenImage13 from '../../assets/Home/Categories For Women/CategoriesWomenImage13.svg'
-import CategoriesWomenImage14 from '../../assets/Home/Categories For Women/CategoriesWomenImage14.svg'
+import CategoriesWomenImage1 from '../../assets/Home/CategoriesForWomen/CategoriesWomenImage1.svg'
+import CategoriesWomenImage2 from '../../assets/Home/CategoriesForWomen/CategoriesWomenImage2.svg'
+import CategoriesWomenImage3 from '../../assets/Home/CategoriesForWomen/CategoriesWomenImage3.svg'
+import CategoriesWomenImage4 from '../../assets/Home/CategoriesForWomen/CategoriesWomenImage4.svg'
+import CategoriesWomenImage5 from '../../assets/Home/CategoriesForWomen/CategoriesWomenImage5.svg'
+import CategoriesWomenImage6 from '../../assets/Home/CategoriesForWomen/CategoriesWomenImage6.svg'
+import CategoriesWomenImage7 from '../../assets/Home/CategoriesForWomen/CategoriesWomenImage7.svg'
+import CategoriesWomenImage8 from '../../assets/Home/CategoriesForWomen/CategoriesWomenImage8.svg'
+import CategoriesWomenImage9 from '../../assets/Home/CategoriesForWomen/CategoriesWomenImage9.svg'
+import CategoriesWomenImage10 from '../../assets/Home/CategoriesForWomen/CategoriesWomenImage10.svg'
+import CategoriesWomenImage11 from '../../assets/Home/CategoriesForWomen/CategoriesWomenImage11.svg'
+import CategoriesWomenImage12 from '../../assets/Home/CategoriesForWomen/CategoriesWomenImage12.svg'
+import CategoriesWomenImage13 from '../../assets/Home/CategoriesForWomen/CategoriesWomenImage13.svg'
+import CategoriesWomenImage14 from '../../assets/Home/CategoriesForWomen/CategoriesWomenImage14.svg'
 
 import Card from '../../components/Card';
 
@@ -205,11 +205,11 @@ const WomenListPage = () => {
                     </div>
                 </div>
             </div>
-            {/* Categories For women section */}
+            {/* CategoriesForWomen section */}
             <div className="w-4/5 bg-white rounded-lg shadow-lg p-6">
                 <div className="flex items-center mb-4">
                     <div className="w-1 h-6 bg-black mr-2"></div>
-                    <h2 className="text-2xl font-semibold italic text-gray-800">Categories For Women</h2>
+                    <h2 className="text-2xl font-semibold italic text-gray-800">CategoriesForWomen</h2>
                 </div>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
 

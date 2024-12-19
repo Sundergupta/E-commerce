@@ -7,6 +7,11 @@ import UrlUser from './components/UrlUser';
 import Home from './screens/Home';
 import MenListPage from './screens/MenListPage';
 import WomenListPage from './screens/WomeListpage';
+import { getDatabase } from 'firebase/database';
+import { app } from "./firebase";
+
+
+
 
 const router = createBrowserRouter([
   {

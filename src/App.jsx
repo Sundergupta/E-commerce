@@ -8,8 +8,6 @@ import Home from './screens/Home';
 import MenListPage from './screens/MenListPage';
 import WomenListPage from './screens/WomeListpage';
 import { getDatabase } from 'firebase/database';
-import { app } from "./firebase";
-
 
 
 
@@ -18,43 +16,42 @@ const router = createBrowserRouter([
     path: "/",
     element: <RootLayout />,
     children: [
-      {
-        path: "SignIn",
-        element: <SignIn />,
-      },
-      {
-        path: "SignUp",
-        element: <SignUp />,
-      },
+
       {
         path: "/",
         element: <Home />,
-
       },
       {
         path: "List",
         element: <WomenListPage />,
-
       },
       {
         path: "MenListPage",
         element: <MenListPage />,
-
       },
       {
-        path: "WomeListPage",
+        path: "WomenListPage",
         element: <WomenListPage />,
-
       },
-
-
-    ]
+    ],
+  },
+  {
+    path: "/",
+    children: [
+      {
+        path: "sign-in",
+        element: <SignIn />,
+      },
+      {
+        path: "sign-up",
+        element: <SignUp />,
+      },
+    ],
   },
   {
     path: "*",
-    element: <Navigate to={"/sign-in"} replace />
-  }
-
+    element: <Navigate to={"/sign-in"} replace />,
+  },
 ]);
 
 function App() {

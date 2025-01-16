@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 const NavBar = () => {
     return (
         <div>
@@ -13,7 +16,7 @@ const NavBar = () => {
                         <h6>Store</h6>
                         <h6>Wish List</h6>
                         <button className="bg-gray-800 text-white border-none py-2 px-6 rounded-md text-[12px] hover:bg-gray-700">
-                            Login
+                            <Link to="/sign-in" >Log In</Link>
                         </button>
                     </div>
                 </div>

@@ -73,19 +73,20 @@ const SignIn = () => {
                                 {errors.password && (
                                     <span className="text-red-500 text-sm mt-1">{errors.password}</span>
                                 )}
+                                <div className="flex flex-col items-start">
+                                    <button
+                                        className="bg-gray-900 text-white font-bold py-3 rounded-md text-sm mt-5 w-1/4 hover:bg-gray-800 text-center"
+                                        type="submit"
+                                    >
+                                        Sign In
+                                    </button>
 
-                                <button
-                                    className="login__btn"
-                                    type="submit"
-                                    disabled={isSubmitting}
-                                >
-                                    {isSubmitting ? "Logging in..." : "Login"}
-                                </button>
+                                </div>
                                 <div>
                                     <Link to="/reset">Forgot Password</Link>
                                 </div>
                                 <div>
-                                    Don't have an account? <Link to="/register">Register</Link> now.
+                                    Don't have an account? <Link to="/sign-up">Register</Link> now.
                                 </div>
                             </form>
                         )}

@@ -1,16 +1,31 @@
-import React from "react";
-import NavBar from "../../components/NavBar";
-import bannerImg from "../../assets/SignInImg.svg";
-import { Formik } from "formik";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Formik } from "formik";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
-import { useState } from "react";
-import { firebaselogIn } from "../../firebase-function";
+import bannerImg from "../../assets/SignInImg.svg";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { storeUserData } from "../../store/substore";
 
 const SignIn = () => {
-    return (
+    const dispatch = useDispatch()
+    const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
+    const [errorMessage, setErrorMessage] = useState(""); // State to store error message
 
+    if (isLoggedIn) {
+        // Render homepage directly after login
+        return (
+            <Router>
+                <Routes>
+                    <Route path="/" element={<SignIn />} />
+                    <Route path="/home" element={<Home />} />
+                </Routes>
+            </Router>
+        );
+    }
+
+    return (
         <div className="flex flex-col h-screen overflow-hidden">
             <div className="flex flex-1 gap-4 h-full">
                 <div className="w-1/2">
@@ -37,21 +52,30 @@ const SignIn = () => {
                             return errors;
                         }}
                         onSubmit={(values, { setSubmitting }) => {
-                            firebaselogIn(values.email, values.password)
-                                .then((userCredential) => {
-                                    console.log("Login Successful", userCredential);
-                                })
-                                .catch((error) => {
-                                    console.error("Error during sign-in", error.message);
-                                })
-                                .finally(() => setSubmitting(false));
+                            alert("Testing")
+                            dispatch(storeUserData({ email: values.email, password: values.password }))
+
+                            // Firebase authentication
+
+                            // signInWithEmailAndPassword(auth, values.email, values.password)
+                            //     .then((userCredential) => {
+                            //         console.log("Login Successful", userCredential);
+                            //         setIsLoggedIn(true); // Mark as logged in
+                            //     })
+                            //     .catch((error) => {
+                            //         console.error("Login Failed", error.message);
+                            //         setErrorMessage("Invalid email or password. Please try again.");
+                            //     })
+                            //     .finally(() => setSubmitting(false));
+
+
                         }}
                     >
                         {({ values, errors, handleChange, handleSubmit, isSubmitting }) => (
                             <form onSubmit={handleSubmit} className="login__container">
                                 <input
                                     type="text"
-                                    className="login__textBox  w-full p-4 border border-gray-300 rounded-lg text-lg pg-gray-100 mb-4 text left"
+                                    className="login__textBox w-full p-4 border border-gray-300 rounded-lg text-lg pg-gray-100 mb-4 text left"
                                     value={values.email}
                                     onChange={handleChange}
                                     placeholder="E-mail Address"
@@ -64,7 +88,7 @@ const SignIn = () => {
 
                                 <input
                                     type="password"
-                                    className="login__textBox  w-full p-4 border border-gray-300 rounded-lg text-lg pg-gray-100 mb-4 text left"
+                                    className="login__textBox w-full p-4 border border-gray-300 rounded-lg text-lg pg-gray-100 mb-4 text left"
                                     value={values.password}
                                     onChange={handleChange}
                                     placeholder="Password"
@@ -73,14 +97,19 @@ const SignIn = () => {
                                 {errors.password && (
                                     <span className="text-red-500 text-sm mt-1">{errors.password}</span>
                                 )}
+
+                                {errorMessage && (
+                                    <div className="text-red-500 text-sm mb-4">{errorMessage}</div>
+                                )}
+
                                 <div className="flex flex-col items-start">
                                     <button
                                         className="bg-gray-900 text-white font-bold py-3 rounded-md text-sm mt-5 w-1/4 hover:bg-gray-800 text-center"
                                         type="submit"
+                                        disabled={isSubmitting}
                                     >
-                                        Sign In
+                                        {isSubmitting ? "Signing In..." : "Sign In"}
                                     </button>
-
                                 </div>
                                 <div>
                                     <Link to="/reset">Forgot Password</Link>

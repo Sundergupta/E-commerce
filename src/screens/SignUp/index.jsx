@@ -5,8 +5,11 @@ import NavBar from "../../components/NavBar";
 import bannerImg from "../../assets/SignUpImg.svg";
 import { Link } from "react-router-dom";
 import { firebasesignUp } from "../../firebase-function";
+import { useDispatch } from "react-redux";
+import { onSigin } from "../../store/features/userSlice";
 
 const SignUp = () => {
+    const dispatch = useDispatch()
     const formik = useFormik({
         initialValues: {
             email: "",
@@ -31,6 +34,7 @@ const SignUp = () => {
         onSubmit: async (values) => {
             const userCredential = await firebasesignUp(values.email, values.password);
             console.log(userCredential);
+            dispatch(onSigin(userCredential))
         },
     });
 
@@ -44,7 +48,7 @@ const SignUp = () => {
                     <h2 className="text-2xl font-bold mb-4 text-left">Sign Up</h2>
                     <p className="text-left text-lg mb-4">Please enter details for login</p>
 
-                    <formik onSubmit={formik.handleSubmit}>
+                    <form onSubmit={formik.handleSubmit}>
                         <div className="flex flex-col items-start">
                             <p className="mb-2 font-medium text-left">User name or email address</p>
                             <input
@@ -96,7 +100,7 @@ const SignUp = () => {
                                 Already have an account? <Link to="/sign-in" className="text-blue-500">Sign In</Link>
                             </p>
                         </div>
-                    </formik>
+                    </form>
                 </div>
             </div>
 

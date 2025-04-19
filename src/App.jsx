@@ -1,5 +1,5 @@
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
-import './App.css';
+// import './App.css';
 import SignUp from './screens/SignUp';
 import SignIn from './screens/SignIn';
 import RootLayout from './components/RootLayout';
@@ -8,6 +8,9 @@ import Home from './screens/Home';
 import MenListPage from './screens/MenListPage';
 import WomenListPage from './screens/WomeListpage';
 import { getDatabase } from 'firebase/database';
+import { useSelector } from 'react-redux';
+import DetailPage from './screens/DetailPage';
+import Payment from './screens/Payment';
 
 
 
@@ -33,6 +36,14 @@ const router = createBrowserRouter([
         path: "WomenListPage",
         element: <WomenListPage />,
       },
+      {
+        path: "DetailPage",
+        element: <DetailPage />
+      },
+      {
+        path: "Payment",
+        element: <Payment />,
+      },
     ],
   },
   {
@@ -42,6 +53,7 @@ const router = createBrowserRouter([
         path: "sign-in",
         element: <SignIn />,
       },
+
       {
         path: "sign-up",
         element: <SignUp />,
@@ -55,6 +67,8 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const user = useSelector((state) => state.user)
+  console.log("Inside App ", user)
   return (
     <>
       <RouterProvider router={router} />

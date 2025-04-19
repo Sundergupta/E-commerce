@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setSelectedProduct } from '../../store/productPageSilce'; // Adjust path as needed
+
+
 
 import Title from '../../components/title.jsx'
 
@@ -56,6 +60,9 @@ import Feedback from '../../components/Feedback.jsx'
 // import List from '../../components/List.jsx'
 
 const App = () => {
+
+    const dispatch = useDispatch()
+
     // /////////////////////////////////////////////////////
     // LimelightImage
     const LimelightImage = [
@@ -137,78 +144,6 @@ const App = () => {
         { image: LimelightImage4, alt: "Bozers", title: "Bozers" },
 
 
-
-
-
-
-
-        // {
-        //     id: 1,
-        //     title: 'Black Sweatshirt',
-        //     description: 'Comfortable and stylish sweatshirt',
-        //     brand: "Jhanvi's Brand",
-        //     price: 123.00,
-        //     isFavorite: false,
-        //     image: LimelightImage1,  // Assign the image here
-        // },
-        // {
-        //     id: 2,
-        //     title: 'Red Hoodie',
-        //     description: 'Warm and cozy hoodie',
-        //     brand: "Jhanvi's Brand",
-        //     price: 150.00,
-        //     isFavorite: false,
-        //     image: LimelightImage2,  // You can use different images here
-        // },
-        // {
-        //     id: 3,
-        //     title: 'Red Hoodie',
-        //     description: 'Warm and cozy hoodie',
-        //     brand: "Jhanvi's Brand",
-        //     price: 150.00,
-        //     isFavorite: false,
-        //     image: LimelightImage3,  // You can use different images here
-        // },
-        // {
-        //     id: 4,
-        //     title: 'Red Hoodie',
-        //     description: 'Warm and cozy hoodie',
-        //     brand: "Jhanvi's Brand",
-        //     price: 150.00,
-        //     isFavorite: false,
-        //     image: LimelightImage4,  // You can use different images here
-        // },
-
-
-
-        // {
-        //     id: 1,
-        //     title: 'Summer Collection',
-        //     image: LimelightImage1,
-        //     details: 'Enjoy the summer with this amazing collection!',
-        //     price: '$49.99',
-        // },
-        // {
-        //     id: 2,
-        //     title: 'High Coziness',
-        //     image: LimelightImage2,
-        //     details: 'Stay cozy with our best collection!',
-        //     price: '$79.99',
-        // },
-        // {
-        //     id: 3,
-        //     title: 'Breezy Summer',
-        //     image: LimelightImage3,
-        //     details: 'Feel the breeze with this awesome summer wear!',
-        //     price: '$99.99',
-        // },
-        // {
-        //     id: 4,
-        //     title: 'Breezy Summer',
-        //     image: LimelightImage4,
-        //     details: 'Feel the breeze with this awesome summer wear!',
-        //     price: '$99.99',
-        // },
     ]
 
     const [products, setProducts] = useState([

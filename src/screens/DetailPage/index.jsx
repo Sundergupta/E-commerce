@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Star, PlayCircle } from "lucide-react";
 import Card from "../../components/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/cartSlice";
 import { useNavigate } from "react-router-dom";
 
-// Image Imports
+// Image Imports (Women Categories)
 import CategoriesWomenImage2 from "../../assets/Home/CategoriesForWomen/CategoriesWomenImage2.svg";
 import CategoriesWomenImage3 from "../../assets/Home/CategoriesForWomen/CategoriesWomenImage3.svg";
 import CategoriesWomenImage4 from "../../assets/Home/CategoriesForWomen/CategoriesWomenImage4.svg";
@@ -18,22 +18,47 @@ import CategoriesWomenImage10 from "../../assets/Home/CategoriesForWomen/Categor
 import CategoriesWomenImage11 from "../../assets/Home/CategoriesForWomen/CategoriesWomenImage11.svg";
 import CategoriesWomenImage12 from "../../assets/Home/CategoriesForWomen/CategoriesWomenImage12.svg";
 
+// Default fallback image
+const defaultImage = "https://via.placeholder.com/400x400.png?text=No+Image";
+
 const ProductPage = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const product = useSelector((state) => state.product.selectedProduct);
+
     const [selectedSize, setSelectedSize] = useState("M");
     const [selectedColor, setSelectedColor] = useState("black");
-    const [mainImage, setMainImage] = useState(product?.img || "");
+    const [mainImage, setMainImage] = useState("");
 
-    const thumbnails = product?.thumbnails || [product?.img];
+    // Thumbnail setup with fallback
+    const thumbnails = product?.thumbnails?.length
+        ? product.thumbnails
+        : product?.img
+            ? [product.img]
+            : [defaultImage];
+
+    // Set main image when product changes
+    useEffect(() => {
+        if (product?.img) {
+            setMainImage(product.img);
+        } else {
+            setMainImage(defaultImage);
+        }
+    }, [product]);
 
     const productCards = [
-        CategoriesWomenImage2, CategoriesWomenImage3, CategoriesWomenImage4,
-        CategoriesWomenImage5, CategoriesWomenImage6, CategoriesWomenImage7,
-        CategoriesWomenImage8, CategoriesWomenImage9, CategoriesWomenImage10,
-        CategoriesWomenImage11, CategoriesWomenImage12,
+        CategoriesWomenImage2,
+        CategoriesWomenImage3,
+        CategoriesWomenImage4,
+        CategoriesWomenImage5,
+        CategoriesWomenImage6,
+        CategoriesWomenImage7,
+        CategoriesWomenImage8,
+        CategoriesWomenImage9,
+        CategoriesWomenImage10,
+        CategoriesWomenImage11,
+        CategoriesWomenImage12,
     ];
 
     if (!product) {
@@ -55,7 +80,7 @@ const ProductPage = () => {
         <div className="max-w-6xl mx-auto p-8">
             {/* Product Detail */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
+                {/* Left - Images */}
                 <div className="flex gap-4">
                     <div className="flex md:flex-col gap-2 overflow-x-auto">
                         {thumbnails.map((image, index) => (
@@ -75,10 +100,9 @@ const ProductPage = () => {
                     />
                 </div>
 
-                {/* Right Side - Info */}
+                {/* Right - Info */}
                 <div>
-                    <h2 className="text-2xl font-semibold mb-1">{product.title}</h2>
-
+                    <h2 className="text-2xl font-semibold mb-1">{product.title || "No Title"}</h2>
 
                     <div className="flex items-center gap-1 mt-2">
                         {[...Array(5)].map((_, i) => (
@@ -99,7 +123,8 @@ const ProductPage = () => {
                             {["S", "M", "L", "XL"].map((size) => (
                                 <button
                                     key={size}
-                                    className={`px-4 py-2 border rounded-md ${selectedSize === size ? "bg-black text-white" : "bg-gray-100"}`}
+                                    className={`px-4 py-2 border rounded-md ${selectedSize === size ? "bg-black text-white" : "bg-gray-100"
+                                        }`}
                                     onClick={() => setSelectedSize(size)}
                                 >
                                     {size}
@@ -117,7 +142,8 @@ const ProductPage = () => {
                                     key={color}
                                     title={color}
                                     aria-label={color}
-                                    className={`w-6 h-6 rounded-full border-2 ${selectedColor === color ? "border-black" : "border-gray-300"}`}
+                                    className={`w-6 h-6 rounded-full border-2 ${selectedColor === color ? "border-black" : "border-gray-300"
+                                        }`}
                                     style={{ backgroundColor: color }}
                                     onClick={() => setSelectedColor(color)}
                                 />
@@ -135,7 +161,7 @@ const ProductPage = () => {
                                     size: selectedSize,
                                     color: selectedColor,
                                     image: mainImage,
-                                    price: 75,
+                                    price: product.price || 75,
                                     quantity: 1,
                                 };
                                 dispatch(addToCart(productToAdd));
@@ -152,11 +178,10 @@ const ProductPage = () => {
                                     size: selectedSize,
                                     color: selectedColor,
                                     image: mainImage,
-                                    price: 75,
+                                    price: product.price || 75,
                                     quantity: 1,
                                 };
                                 dispatch(addToCart(productToBuy));
-                                console.log("productToBuy", productToBuy)
                                 navigate("/payment");
                             }}
                         >
@@ -180,7 +205,8 @@ const ProductPage = () => {
                         <span className="text-gray-500">Question & Answer (3)</span>
                     </div>
                     <p className="mt-4 text-gray-600">
-                        {product.description || "This product is crafted with high-quality material, offering style and comfort for everyday wear."}
+                        {product.description ||
+                            "This product is crafted with high-quality material, offering style and comfort for everyday wear."}
                     </p>
                 </div>
                 <div className="relative">
